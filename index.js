@@ -1,7 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 let speed = 100;
 
-/* ---------- ANIMASI ASLI KAMU (tidak diubah) ---------- */
+/* ========== SCENE ASLI KAMU (tidak diubah) ========== */
 let scene1 = gsap.timeline();
 ScrollTrigger.create({
   animation: scene1,
@@ -22,10 +22,7 @@ scene1.to("#h1-8", { y: 3.5 * speed, x: 0.2 * speed }, 0);
 scene1.to("#h1-9", { y: 3.5 * speed, x: -0.2 * speed }, 0);
 scene1.to("#info", { y: 8 * speed }, 0);
 
-/* ---------- Awan, burung, matahari, dll tetap ---------- */
-/* ... semua bagian asli dari index.js kamu tetap di sini ... */
-
-/* ✨ Tambahan teks scroll */
+/* ---------- TEKS UCAPAN ---------- */
 gsap.to("#textScroll1", {
   opacity: 1,
   scrollTrigger: {
@@ -35,7 +32,6 @@ gsap.to("#textScroll1", {
     scrub: true,
   },
 });
-
 gsap.to("#textScroll1", {
   opacity: 0,
   scrollTrigger: {
@@ -45,7 +41,6 @@ gsap.to("#textScroll1", {
     scrub: true,
   },
 });
-
 gsap.to("#textScroll2", {
   opacity: 1,
   scrollTrigger: {
@@ -55,18 +50,35 @@ gsap.to("#textScroll2", {
     scrub: true,
   },
 });
-
 gsap.to("#textScroll2", {
   opacity: 0,
   scrollTrigger: {
     trigger: ".scrollElement",
-    start: "60% top",
-    end: "70% 100%",
+    start: "80% top",
+    end: "bottom 100%",
     scrub: true,
   },
 });
 
-/* Fullscreen toggle (tetap seperti aslinya) */
+/* ---------- MUSIK MANUAL ---------- */
+const song = document.getElementOfId
+const song = document.getElementById("song");
+const playBtn = document.getElementById("playSong");
+
+let playing = false;
+playBtn.addEventListener("click", () => {
+  if (!playing) {
+    song.play();
+    playBtn.innerText = "⏸️ Pause Musik";
+    playing = true;
+  } else {
+    song.pause();
+    playBtn.innerText = "🎶 Putar Musik";
+    playing = false;
+  }
+});
+
+/* ---------- FULLSCREEN ---------- */
 let fullscreen;
 let fsEnter = document.getElementById("fullscr");
 fsEnter.addEventListener("click", function (e) {
@@ -82,7 +94,7 @@ fsEnter.addEventListener("click", function (e) {
   }
 });
 
-/* Reset scrollbar */
+/* Reset scroll */
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
