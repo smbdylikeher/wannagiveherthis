@@ -241,3 +241,53 @@ fsEnter.addEventListener("click", function (e) {
     fsEnter.innerHTML = "Go Fullscreen";
   }
 });
+/* Text Scroll Animations */
+gsap.to("#textScroll1", {
+  opacity: 1,
+  scrollTrigger: {
+    trigger: ".scrollElement",
+    start: "top top",
+    end: "20% 100%",
+    scrub: true,
+  },
+});
+
+gsap.to("#textScroll1", {
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".scrollElement",
+    start: "25% top",
+    end: "35% 100%",
+    scrub: true,
+  },
+});
+
+gsap.to("#textScroll2", {
+  opacity: 1,
+  scrollTrigger: {
+    trigger: ".scrollElement",
+    start: "35% top",
+    end: "55% 100%",
+    scrub: true,
+  },
+});
+
+gsap.to("#textScroll2", {
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".scrollElement",
+    start: "60% top",
+    end: "70% 100%",
+    scrub: true,
+  },
+
+
+/* Play song when link clicked */
+const song = document.getElementById("song");
+const playSong = document.getElementById("playSong");
+
+playSong.addEventListener("click", (e) => {
+  e.preventDefault();
+  song.play();
+  playSong.innerHTML = "🎶 Lagu lagi diputar...";
+});
