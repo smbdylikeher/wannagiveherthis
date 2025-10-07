@@ -26,7 +26,7 @@ svg {
 
 .scrollElement {
   position: absolute;
-  height: 6000px;
+  height: 9000px; /* biar scroll terakhir kebagian */
   width: 100px;
   top: 0;
   z-index: 0;
@@ -50,18 +50,30 @@ svg {
   z-index: 11;
 }
 
+/* Tombol musik */
 .btn_works {
-  left: 100px;
-  right: unset;
-  text-decoration: none;
+  position: fixed;
+  bottom: 5%;
+  left: 50px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.7em;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 11;
 }
 
-.btn:hover {
+.btn:hover,
+.btn_works:hover {
   background: #ffffff;
   color: #1b1734;
 }
 
-/* ✨ Tambahan teks ucapan */
+/* ✨ Teks ucapan */
 .scrollText {
   position: fixed;
   top: 40%;
@@ -75,3 +87,21 @@ svg {
   font-family: "Poppins", sans-serif;
   z-index: 10;
 }
+
+/* Efek kecil tombol musik biar keren */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn_works {
+  animation: pulse 2s infinite;
+}
+
