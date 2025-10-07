@@ -56,6 +56,26 @@ svg {
   right: unset;
   text-decoration: none;
 }
+.scrollText {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.4rem;
+  text-align: center;
+  width: 80%;
+  opacity: 0;
+  font-family: "Poppins", sans-serif;
+  z-index: 10;
+}
+
+.linkSong {
+  top: 60%;
+  font-size: 1.1rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 .btn:hover {
   background: #ffffff;
